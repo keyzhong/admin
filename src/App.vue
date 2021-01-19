@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <h1>admin</h1>
+    <!-- <el-button type='primary' icon='el-icon-search' circle></el-button>
+    <el-button type='primary' icon='el-icon-star-on' circle></el-button>
+    <el-button type='primary' icon='el-icon-star-off' circle></el-button> -->
     <router-view/>
   </div>
 </template>

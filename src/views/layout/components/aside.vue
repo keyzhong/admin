@@ -2,13 +2,14 @@
 
     <el-menu
       default-active="/"
-      class="el-menu-vertical-demo"
+      class="el-menu-vertical-demo "
       background-color="#002033"
       text-color="#fff"
       active-text-color="#ffd04b"
       @open="handleOpen"
       @close="handleClose"
       router
+      :collapse="isCollapse"
     >
       <div class="logo"></div>
       <el-menu-item index="/">
@@ -47,11 +48,13 @@ export default {
   name: 'AppAside',
   data () {
     return {
-
     }
   },
   props: {
-
+    isCollapse: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {
     handleOpen (key, keyPath) {

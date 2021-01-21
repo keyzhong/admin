@@ -90,6 +90,10 @@ export default {
           message: '登录成功',
           type: 'success'
         })
+        // 保存登录信息
+        const userInfo = res.data.data
+        // 本地存储只能存字符串 可以转成JSON
+        localStorage.setItem('userInfo', JSON.stringify(userInfo))
         this.$router.push({ name: 'Home' })
       }).catch(() => {
         this.loading = false

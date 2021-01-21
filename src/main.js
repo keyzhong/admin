@@ -5,6 +5,9 @@ import router from './router'
 // 样式
 import './styles/index.less'
 
+// 顶部进度条样式
+import 'nprogress/nprogress.css'
+
 // ele
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'

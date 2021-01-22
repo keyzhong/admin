@@ -10,6 +10,10 @@ export const getArticles = params => {
   return request({
     method: 'GET',
     url: '/mp/v1_0/articles',
+    query: {
+      page: params.page,
+      pre_page: params.pre_page
+    },
     // Body 参数使用 data 设置
     // Query 参数使用 params 设置
     // Headers 参数使用 headers 设置
@@ -39,5 +43,43 @@ export const deleteArticle = articleId => {
     // 接口文档中的写的路径参数需要在 url 中传递
     // 凡是看见接口路径中有的 :xxx 格式的字段，则需要传递路径参数
     url: `/mp/v1_0/articles/${articleId}`
+  })
+}
+
+/**
+ * 发布文章
+ */
+export const addArticle = function (data, draft = false) {
+  return request({
+    method: 'POST',
+    url: '/mp/v1_0/articles',
+    params: {
+      draft // 是否存为草稿（true 为草稿）
+    },
+    data
+  })
+}
+
+/**
+ * 获取指定文章
+ */
+export const getArticle = articleId => {
+  return request({
+    method: 'GET',
+    url: `/mp/v1_0/articles/${articleId}`
+  })
+}
+
+/**
+ * 编辑文章
+ */
+export const updateArticle = (articleId, data, draft = false) => {
+  return request({
+    method: 'PUT',
+    url: `/mp/v1_0/articles/${articleId}`,
+    params: {
+      draft // 是否存为草稿（true 为草稿）
+    },
+    data
   })
 }

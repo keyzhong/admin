@@ -60,7 +60,6 @@ export default {
     loadUserProfile () {
       getUserInfo().then(res => {
         this.userInfo = res.data.data
-        console.log(res)
       }).catch(err => {
         console.log(err)
       })

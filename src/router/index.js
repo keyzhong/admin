@@ -5,6 +5,11 @@ import Login from '@/views/login'
 import Home from '@/views/home'
 import Layout from '@/views/layout'
 import Article from '@/views/article'
+import Publish from '@/views/publish'
+import Fans from '@/views/fans'
+import Setting from '@/views/setting'
+import Comment from '@/views/comment'
+import Image from '@/views/image'
 
 Vue.use(VueRouter)
 
@@ -28,6 +33,31 @@ const routes = [
         path: '/article', // path为空 作为默认子路由
         name: 'article',
         component: Article
+      },
+      {
+        path: '/publish', // path为空 作为默认子路由
+        name: 'publish',
+        component: Publish
+      },
+      {
+        path: '/fans', // path为空 作为默认子路由
+        name: 'fans',
+        component: Fans
+      },
+      {
+        path: '/comment', // path为空 作为默认子路由
+        name: 'comment',
+        component: Comment
+      },
+      {
+        path: '/setting', // path为空 作为默认子路由
+        name: 'setting',
+        component: Setting
+      },
+      {
+        path: '/image', // path为空 作为默认子路由
+        name: 'image',
+        component: Image
       }
     ]
   }

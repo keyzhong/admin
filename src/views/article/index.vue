@@ -4,9 +4,7 @@
       <div slot="header" class="clearfix">
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ path: '/article' }"
-            >内容管理</el-breadcrumb-item
-          >
+          <el-breadcrumb-item :to="{ path: '/article' }" >内容管理</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
         <!--筛选表单-->
@@ -37,8 +35,7 @@
               range-separator="至"
               start-placeholder="开始日期"
               end-placeholder="结束日期"
-            >
-            </el-date-picker>
+            />
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="loadArticles" :disabled = 'tableLoading'>查询</el-button>
@@ -71,8 +68,8 @@
          <el-table-column prop="pubdate" label="发布时间"> </el-table-column>
           <el-table-column prop="address" label="操作">
             <template slot-scope="scope">
-             <el-button type='primary' class='el-icon-edit' @click=handleClick(scope.row) circle size="mini"></el-button>
-             <el-button type='danger' class='el-icon-delete' @click='onDeleteArticle(scope.row.id)' circle size="mini"></el-button>
+             <el-button type='primary' class='el-icon-edit' @click="$router.push('/publish?id=' + scope.row.id)" circle plain></el-button>
+             <el-button type='danger' class='el-icon-delete' @click='onDeleteArticle(scope.row.id)' circle plain></el-button>
             </template>
           </el-table-column>
       </el-table>
@@ -99,8 +96,8 @@ export default {
   data () {
     return {
       params: {
-        page: 1,
-        per_page: 10,
+        page: 1, // 传入页
+        per_page: 10, // 每页条数
         begin_pubdate: '',
         end_pubdate: '',
         status: null,

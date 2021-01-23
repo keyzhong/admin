@@ -45,6 +45,7 @@
 <script type="text/ecmascript-6">
 import AppAside from './components/aside'
 import { getUserInfo } from '@/api/user'
+import eventBus from '@/utils/eventBus'
 export default {
   name: 'LayoutIndex',
   data () {
@@ -91,6 +92,12 @@ export default {
   },
   created () {
     this.loadUserProfile()
+    eventBus.$on('updateAvatar', img => {
+      this.userInfo.photo = img
+    })
+  },
+  destroyed () {
+    eventBus.$off('updateAvatar')
   }
 }
 // computed 和watch的区别

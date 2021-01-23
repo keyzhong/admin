@@ -20,3 +20,13 @@ export const getUserInfo = (data) => {
     data
   })
 }
+
+// 修改头像
+// data必须穿FormData对象
+export const updateUserPhoto = data => {
+  return request({
+    method: 'PATCH',
+    url: '/mp/v1_0/user/photo',
+    data
+  })
+}

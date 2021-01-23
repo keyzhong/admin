@@ -1,5 +1,5 @@
 <template>
-  <div class="home-container">shouye</div>
+  <div class="home-container">首页啥都没有</div>
 </template>
 
 <script type="text/ecmascript-6">
